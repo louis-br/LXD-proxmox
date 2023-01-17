@@ -1,0 +1,38 @@
+### This is a YAML representation of the profile.
+### Any line starting with a '# will be ignored.
+###
+### A profile consists of a set of configuration items followed by a set of
+### devices.
+###
+### An example would look like:
+### name: onenic
+### config:
+###   raw.lxc: lxc.aa_profile=unconfined
+### devices:
+###   eth0:
+###     nictype: bridged
+###     parent: lxdbr0
+###     type: nic
+###
+### Note that the name is shown but cannot be changed
+
+#    lxc.autodev = 1
+  #raw.lxc: |
+  #  lxc.cgroup2.devices.allow = a
+  #  lxc.cgroup.devices.allow = a
+  #  lxc.namespace.keep = user net
+  #security.privileged: "true"
+config:
+  security.nesting: "true"
+description: ""
+used_by: []
+#devices: 
+#  root:
+#    path: /
+#    pool: default
+#    type: disk
+#source: ${rootmnt}
+#tty3:
+#  path: /dev/tty1
+#  source: /dev/tty3
+#  type: unix-char

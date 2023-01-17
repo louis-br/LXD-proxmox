@@ -1,0 +1,34 @@
+### This is a YAML representation of the profile.
+### Any line starting with a '# will be ignored.
+###
+### A profile consists of a set of configuration items followed by a set of
+### devices.
+###
+### An example would look like:
+### name: onenic
+### config:
+###   raw.lxc: lxc.aa_profile=unconfined
+### devices:
+###   eth0:
+###     nictype: bridged
+###     parent: lxdbr0
+###     type: nic
+###
+### Note that the name is shown but cannot be changed
+
+config:
+  linux.kernel_modules: ip6_tables,ebtables
+  security.nesting: "true"
+  security.privileged: "true"
+description: ""
+devices:
+  eth0:
+    ipv4.address: 10.1.1.254
+    name: eth0
+    network: lxdbr0
+    type: nic
+  proxy8006:
+    listen: tcp:0.0.0.0:8006
+    connect: tcp:0.0.0.0:8006
+    type: proxy
+used_by: []

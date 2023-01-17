@@ -1,0 +1,26 @@
+architecture: amd64
+creation_date: 1672378200
+expiry_date: 1674970200
+properties:
+  architecture: amd64
+  description: Debian bullseye amd64 from docker image
+  name: debian-bullseye-amd64-dockerio
+  os: debian
+  release: bullseye
+  serial: "20221230_05:24"
+  variant: default
+templates:
+  /etc/hostname:
+    when:
+    - create
+    - copy
+    create_only: false
+    template: hostname.tpl
+    properties: {}
+  /etc/hosts:
+    when:
+    - create
+    - copy
+    create_only: false
+    template: hosts.tpl
+    properties: {}
